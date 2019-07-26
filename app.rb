@@ -1,4 +1,5 @@
 require 'sinatra/base'
+set :public_folder, File.dirname(__FILE__)+'/'
 
 
 
@@ -6,10 +7,14 @@ class Thermostat < Sinatra::Base
 
 
 
+
   get '/' do
 
-"Hello!!!"
-  # <script type="text/javascript" src="js/thermostat.js"></script>
+    File.read(File.join('public','index.html'))
+
+
+
+  # '<script type="text/javascript" src="public/js/thermostat.js"></script>'
 
   end
 
